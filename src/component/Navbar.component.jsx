@@ -2,7 +2,7 @@ import React from 'react';
 import * as RB from 'react-bootstrap';
 
 export const Navbar = ({userName, userEmail}) => (
-  <RB.Nav className="justify-content-end" activeKey="/home">
+  <RB.Nav className="justify-content-end">
     <RB.Nav.Item>
       <RB.Nav.Link eventKey="disabled" disabled>
         {`Hello, ${userName} - (${userEmail})`}

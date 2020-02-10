@@ -2,8 +2,7 @@ import React from 'react';
 import './Vulnerabilities.component.css';
 
 export const Vulnerabilities = (props) => (
-  <div> 
-  {console.log(props.high)}
+  <div>
     <div className="divider-large"></div>
     <div className="body-container">
       <h5 className="title-vulnera">Vulnerabilities Found</h5>
@@ -24,7 +23,7 @@ export const Vulnerabilities = (props) => (
             <h6>{item.name} <span className="badge badge-secondary">{item.severity}</span></h6>
             <p><b>Description:</b> {item.description}</p>
             <p><b>Solution:</b> {item.solution}</p>
-            <p>Assets: {item.affectedAssetsNames}</p>
+            <p><b>Assets:</b> {item.affectedAssetsNames}</p>
             <div className="divider-small"></div>
           </div>
         )
@@ -35,7 +34,7 @@ export const Vulnerabilities = (props) => (
             <h6>{item.name} <span className="badge badge-success">{item.severity}</span></h6>
             <p><b>Description:</b> {item.description}</p>
             <p><b>Solution:</b> {item.solution}</p>
-            <p>Assets: {item.affectedAssetsNames}</p>
+            <p><b>Assets:</b> {item.affectedAssetsNames}</p>
             <div className="divider-small"></div>
           </div>
         )
@@ -46,7 +45,7 @@ export const Vulnerabilities = (props) => (
             <h6>{item.name} <span className="badge badge-info">{item.severity}</span></h6>
             <p><b>Description:</b> {item.description}</p>
             <p><b>Solution:</b> {item.solution}</p>
-            <p>Assets: {item.affectedAssetsNames}</p>
+            <p><b>Assets:</b> {item.affectedAssetsNames}</p>
             <div className="divider-small"></div>
           </div>
         )

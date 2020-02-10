@@ -3,7 +3,6 @@ import data from './component/data/scan.json';
 import Navbar from './component/Navbar.component';
 import Monthly from './component/Monthly-Result.component';
 import Vulnerabilities from './component/Vulnerabilities.component.jsx';
-import './App.css';
 
 class App extends React.Component {
   render(){
