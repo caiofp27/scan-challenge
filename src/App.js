@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
+import data from './component/data/scan.json';
+import Navbar from './component/Navbar.component';
+import Monthly from './component/Monthly-Result.component';
+import Vulnerabilities from './component/Vulnerabilities.component.jsx';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render(){
+    const user = data.user;
+    const scan = data.scan;
+    const vulnerabilities = scan.vulnerabilities;
+    let assets = scan.assets
+      for(let i=0; i<vulnerabilities.length; i++){
+        var affectedAssets = vulnerabilities[i].affectedAssets
+        var affectedAssetsNames = "";
+        for(let a=0; a<affectedAssets.length; a++){
+          for(let v=0; v<scan.assets.length; v++){
+            if(affectedAssets[a] === assets[v].id){
+              if(affectedAssetsNames.length > 0) {
+                affectedAssetsNames += ", ";
+              }
+              affectedAssetsNames = affectedAssetsNames + assets[v].description;
+            }
+          }
+        }
+        vulnerabilities[i].affectedAssetsNames = affectedAssetsNames; 
+      }
+    const high = vulnerabilities.filter(item => item.severity === "high");
+    const medium = vulnerabilities.filter(item => item.severity === "medium");
+    const low = vulnerabilities.filter(item => item.severity === "low");
+    const info = vulnerabilities.filter(item => item.severity === "information");
+    return (
+      <div>
+        <Navbar userName={user.displayName} userEmail={user.email} />
+        <div className="container">
+          <Monthly scan={scan} />
+          <Vulnerabilities high={high} medium={medium} low={low} info={info} assets={scan.assets} />
+        </div>
+      </div>
+    );
+  }
 }
-
 export default App;

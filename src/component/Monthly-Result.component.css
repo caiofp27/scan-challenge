@@ -1,0 +1,19 @@
+.title-card{
+  font-size: 3rem;
+}
+
+.cards{
+  padding-top: 50px;
+}
+
+.card-box{
+  transition: transform 0.25s ease-out;
+}
+
+.card-box:hover {
+  transform: scale(1.05);
+}
+
+.row-cards{
+  padding-top: 25px;
+}

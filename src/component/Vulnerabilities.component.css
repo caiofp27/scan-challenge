@@ -1,0 +1,27 @@
+.title-vulnera{
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.divider-large{
+  height: 2px;
+  width: 100%;
+  background-color: #AAA;
+  margin-top: 40px;
+}
+
+.body-container{
+  padding: 20px;
+}
+
+.divider-small{
+  height: 1px;
+  width: 100%;
+  background-color: #CCC;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p{
+  color: #444;
+}
